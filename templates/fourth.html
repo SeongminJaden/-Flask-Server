@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>4번_센서값 받기</title>
+  <style>
+    body{
+      margin:auto;
+      text-align: center;
+      width:360px;
+      height:640px;
+      border:1px solid black;
+      position:relative;
+      top:50px;
+      z-index:1;
+    }
+     h1{
+        margin: 10px 15px 40px 25px;
+        font-size: 20px;
+    }
+    h2{
+      color: #444444;
+      font-size: 15px;
+    }
+    #method{
+      background-color:lightpink;
+      height:250px;
+      width:340px;
+      text-align: center;
+      color: #444444;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+      #explain{
+      background-color:transparent;
+      height:220px;
+      width:330px;
+      text-align: left;
+      color: #444444;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      }
+
+    button {
+      height: 50px;
+      width: 250px;
+      border-width: 1.5px;
+      border-radius: 5px;
+      margin-right : 45px;
+      margin-top : -20px;
+      background-color: lightpink;
+      display: inline-block;
+    }
+		#btn_group button:hover{
+        color:white;
+        background-color: pink;
+    }
+       .image-container {
+      position: absolute;
+      top: 0px;
+      right: 50px;
+    }
+    
+.image-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  margin-top:15px;
+  transition: box-shadow 0.3s ease; /* 그림자 변경을 부드럽게 */
+}
+
+
+    .image-button img {
+      transition-duration: 0.5s;
+    }
+    
+  .image-button:active img {
+  margin-left: 1px;
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px black;
+}
+
+.image-button:hover img {
+  margin-left: 1px;
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px black;
+}
+  </style>
+</head>
+<body>
+  <h1>식도 건강 지킴이 </h1>
+  <h2>센서로 pH값을 측정하세요.</h2>
+     <div class="image-container">
+  <button class="image-button" onclick="location.href='/'">
+    <img src="{{ url_for('static', filename='chur.png') }}" alt="로고" width="35">
+  </button>
+</div>
+    <div id = "method"><p>측정방법</p>
+    <div id = "explain">① 구강 내 타액을 체취하세요.<br>② pH 시험지에 타액을 떨어트리세요.<br>③ pH 시험지를 디바이스 내에 고정하세요.<br>④ 디바이스를 평평한 곳에 두고 뚜껑을 닫으세요.<br>⑤ 디바이스의 촬영 버튼을 누르세요.</div></div>
+    
+  <img src="{{ url_for('static', filename='device.png') }}" alt="디바이스에서 촬영버튼쪽 찍은 사진" width="300" height="200"><br>
+  <!-- 입력 버튼 -->
+    <ul id = "btn_group">
+  <button id="btn" && onclick="location.href='index.html'">촬영 완료</button>
+    </ul>
+
+</body>
+</html>
